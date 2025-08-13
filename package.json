@@ -1,4 +1,44 @@
 {
+  "name": "udyam-registration-portal",
+  "version": "1.0.0",
+  "description": "Government of India - Udyam Registration Portal for MSME",
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "build": "npm run build:backend && npm run build:frontend",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run preview",
+    "start": "npm run start:backend",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "test": "npm run test:backend && npm run test:frontend",
+    "postinstall": "npm run install:all"
+  },
+  "keywords": [
+    "udyam",
+    "msme",
+    "government",
+    "registration",
+    "india",
+    "ministry",
+    "micro-small-medium-enterprises"
+  ],
+  "author": "Kiran",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiran0702/udyam.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "helmet": "^8.1.0",
@@ -8,6 +48,11 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.7.0",
     "@testing-library/react": "^16.3.0",
+    "concurrently": "^8.2.2",
     "jest": "^30.0.5"
-  }
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ]
 }
