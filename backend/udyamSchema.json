@@ -1,0 +1,48 @@
+{
+  "step1": {
+    "fields": [
+      {
+        "name": "aadhaarNumber",
+        "label": "Aadhaar Number",
+        "type": "text",
+        "validation": {
+          "regex": "^[0-9]{12}$",
+          "required": true,
+          "message": "Aadhaar number must be 12 digits."
+        }
+      },
+      {
+        "name": "entrepreneurName",
+        "label": "Name of Entrepreneur",
+        "type": "text",
+        "validation": {
+          "required": true,
+          "message": "Entrepreneur name is required."
+        }
+      },
+      {
+        "name": "consentGiven",
+        "label": "Consent",
+        "type": "checkbox",
+        "validation": {
+          "required": true,
+          "message": "Consent must be given."
+        }
+      }
+    ]
+  },
+  "step2": {
+    "fields": [
+      {
+        "name": "panNumber",
+        "label": "PAN Number",
+        "type": "text",
+        "validation": {
+          "regex": "^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$",
+          "required": true,
+          "message": "PAN number format is invalid."
+        }
+      }
+    ]
+  }
+}

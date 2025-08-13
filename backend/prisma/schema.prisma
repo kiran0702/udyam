@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model RegistrationStep1 {
+  id               Int      @id @default(autoincrement())
+  aadhaarNumber    String   @unique
+  entrepreneurName String
+  consentGiven     Boolean
+  createdAt        DateTime @default(now())
+  registrationStep2 RegistrationStep2[]
+}
+
+model RegistrationStep2 {
+  id                  Int      @id @default(autoincrement())
+  registrationStep1Id Int
+  panNumber           String   @unique
+  validated           Boolean  @default(false)
+  createdAt           DateTime @default(now())
+  registrationStep1   RegistrationStep1 @relation(fields: [registrationStep1Id], references: [id])
+}

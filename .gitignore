@@ -1,0 +1,84 @@
+# Root Project .gitignore
+# This protects the entire Udyam Registration project
+
+# Dependencies - NEVER COMMIT NODE_MODULES
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment Variables - CONTAINS SENSITIVE DATA
+**/.env
+**/.env.local
+**/.env.development
+**/.env.test
+**/.env.production
+**/.env.*.local
+
+# Production builds
+**/dist/
+**/build/
+**/.tmp/
+**/temp/
+
+# Database files
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+**/generated/prisma
+
+# Logs
+**/logs/
+**/*.log
+
+# Cache directories
+**/.cache/
+**/.parcel-cache/
+**/.npm/
+**/.eslintcache
+
+# IDE files
+**/.vscode/
+**/.idea/
+**/*.swp
+**/*.swo
+**/*~
+
+# OS generated files
+**/.DS_Store
+**/.DS_Store?
+**/._*
+**/.Spotlight-V100
+**/.Trashes
+**/ehthumbs.db
+**/Thumbs.db
+
+# Coverage reports
+**/coverage/
+**/*.lcov
+
+# Runtime data
+**/pids/
+**/*.pid
+**/*.seed
+**/*.pid.lock
+
+# Optional files
+**/*.tgz
+**/.yarn-integrity
+**/.node_repl_history
+
+# Deployment files (these might contain sensitive info)
+**/.vercel
+**/.netlify
+**/render.yaml
+
+# Backup files
+**/*.bak
+**/*.backup
+**/*.old
+
+# Package-lock files (optional - some teams prefer to commit these)
+# **/package-lock.json
+# **/yarn.lock
