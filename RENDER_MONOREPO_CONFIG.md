@@ -27,16 +27,17 @@ npm test
 
 ### **1. Backend (Web Service)**
 
-| Field | Value |
-|-------|--------|
-| **Repository** | `kiran0702/udyam` |
-| **Root Directory** | `backend` |
-| **Environment** | `Node` |
-| **Build Command** | `npm install && npm run build` |
-| **Start Command** | `npm start` |
-| **Instance Type** | `Free` or `Starter` |
+| Field              | Value                          |
+| ------------------ | ------------------------------ |
+| **Repository**     | `kiran0702/udyam`              |
+| **Root Directory** | `backend`                      |
+| **Environment**    | `Node`                         |
+| **Build Command**  | `npm install && npm run build` |
+| **Start Command**  | `npm start`                    |
+| **Instance Type**  | `Free` or `Starter`            |
 
 **Environment Variables:**
+
 ```bash
 DATABASE_URL=<postgresql-url-from-render>
 NODE_ENV=production
@@ -47,14 +48,15 @@ LOG_LEVEL=info
 
 ### **2. Frontend (Static Site)**
 
-| Field | Value |
-|-------|--------|
-| **Repository** | `kiran0702/udyam` |
-| **Root Directory** | `frontend` |
-| **Build Command** | `npm install && npm run build` |
-| **Publish Directory** | `dist` |
+| Field                 | Value                          |
+| --------------------- | ------------------------------ |
+| **Repository**        | `kiran0702/udyam`              |
+| **Root Directory**    | `frontend`                     |
+| **Build Command**     | `npm install && npm run build` |
+| **Publish Directory** | `dist`                         |
 
 **Environment Variables:**
+
 ```bash
 VITE_API_URL=https://udyam-backend.onrender.com/registration
 VITE_APP_NAME=Udyam Registration Portal
@@ -67,19 +69,20 @@ VITE_ENABLE_PROGRESS_TRACKER=true
 
 If you want to deploy as a single service (backend serving frontend):
 
-| Field | Value |
-|-------|--------|
-| **Repository** | `kiran0702/udyam` |
-| **Root Directory** | `.` (root) |
-| **Environment** | `Node` |
-| **Build Command** | `npm install && npm run build && cp -r frontend/dist backend/public` |
-| **Start Command** | `npm start` |
+| Field              | Value                                                                |
+| ------------------ | -------------------------------------------------------------------- |
+| **Repository**     | `kiran0702/udyam`                                                    |
+| **Root Directory** | `.` (root)                                                           |
+| **Environment**    | `Node`                                                               |
+| **Build Command**  | `npm install && npm run build && cp -r frontend/dist backend/public` |
+| **Start Command**  | `npm start`                                                          |
 
 ## ⚡ Build Process Explanation
 
 ### What happens when Render runs `npm install && npm run build`:
 
 1. **npm install:**
+
    - Installs root dependencies (including `concurrently`)
    - Triggers `postinstall` script
    - Automatically runs `npm run install:all`
@@ -91,20 +94,23 @@ If you want to deploy as a single service (backend serving frontend):
    - Runs `npm run build:frontend` (Vite build → dist folder)
 
 ### Backend-specific build process:
+
 ```bash
 cd backend && npm run build
 # Executes: prisma generate && prisma migrate deploy
 ```
 
 ### Frontend-specific build process:
+
 ```bash
-cd frontend && npm run build  
+cd frontend && npm run build
 # Executes: vite build (creates dist/ folder)
 ```
 
 ## 🔄 Deployment Workflow
 
 ### Development Workflow:
+
 ```bash
 # Clone repo
 git clone https://github.com/kiran0702/udyam.git
@@ -118,6 +124,7 @@ npm run dev
 ```
 
 ### Production Deployment (Render):
+
 ```bash
 # Render automatically runs:
 npm install          # Installs all dependencies
@@ -128,16 +135,19 @@ npm start            # Starts backend (frontend is static)
 ## 🎯 Benefits of This Setup
 
 ### ✅ **Single Command Installation:**
+
 - No need to install frontend and backend separately
 - Consistent dependency management
 - Faster CI/CD pipeline
 
 ### ✅ **Unified Build Process:**
+
 - Both services build with one command
 - Consistent deployment across environments
 - Easy to manage and maintain
 
 ### ✅ **LingoVibe-Style Efficiency:**
+
 - Same pattern as successful LingoVibe deployment
 - Proven monorepo architecture
 - Scalable for future features
@@ -147,6 +157,7 @@ npm start            # Starts backend (frontend is static)
 ### Quick Copy-Paste Configuration:
 
 #### **Backend Web Service:**
+
 ```
 Build Command: npm install && npm run build
 Start Command: npm start
@@ -154,6 +165,7 @@ Root Directory: backend
 ```
 
 #### **Frontend Static Site:**
+
 ```
 Build Command: npm install && npm run build
 Publish Directory: dist

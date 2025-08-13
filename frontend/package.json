@@ -15,7 +15,8 @@
     "@tailwindcss/vite": "^4.1.11",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "udyam-registration-portal": "file:.."
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
