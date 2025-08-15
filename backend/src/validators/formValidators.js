@@ -7,7 +7,7 @@ export const validateStep2 = (req, res, next) => {
       .json({ error: "registrationStep1Id is required and must be a number." });
   }
   if (!panNumber || !/^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$/.test(panNumber)) {
-    return res.status(400).json({ error: "Invalid PAN number format." });
+    return res.status(400).json({ error: "Invalid PAN number ." });
   }
   next();
 };
