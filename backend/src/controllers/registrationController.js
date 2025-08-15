@@ -4,7 +4,7 @@ export const getSchema = (req, res) => {
   const schemaPath = path.resolve("./udyamSchema.json");
   fs.readFile(schemaPath, "utf8", (err, data) => {
     if (err) {
-      return res.status(500).json({ error: "Could not read schema " });
+      return res.status(500).json({ error: "Could not read schema file" });
     }
     res.json(JSON.parse(data));
   });
